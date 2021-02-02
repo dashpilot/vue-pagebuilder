@@ -15,8 +15,13 @@ const template = `
         <textarea class="form-control" v-if="value == 'rte'" v-model="item.body"></textarea>
       </div>
 
-      <div class="label">Delete</div>
-      <button class="btn btn-outline-danger" @click="deleteItem(item.id)">Delete</button>
+      <div class="label">Options</div>
+      <div class="btn-group w-100">
+      <button class="btn btn-outline-secondary w-50" @click="moveItem(item.id)">Move Down</button>
+      <button class="btn btn-outline-danger w-50" @click="deleteItem(item.id)">Delete</button>
+      </div>
+
+      <button class="btn btn-primary mt-3" @click="save">Save</button>
 
     </div>
   </transition>
@@ -55,6 +60,25 @@ export default {
   },
 
   methods: {
+    save: function(){
+      alert(JSON.stringify(this.entries));
+      this.item = false;
+    },
+    deleteItem: function(id){
+      let r = confirm('Are you sure you want to delete this item?');
+      if(r == true){
+      this.entries.splice(this.entries.findIndex(x => x.id === id), 1);
+      this.item = false;
+      }
+    },
+    moveItem: function(id) {
+      var from = this.entries.findIndex(x => x.id == id);
+      var to = from +1;
+      console.log(from);
+      console.log(to);
+      var f = this.entries.splice(from, 1)[0];
+      this.entries.splice(to, 0, f);
+    },
     addLayout: function(event) {
       let layout = event.target.getAttribute('data-layout');
       let newItem = {};
@@ -65,14 +89,6 @@ export default {
       this.entries.unshift(newItem);
       this.add = false;
     },
-
-    deleteItem: function(id){
-      let r = confirm('Are you sure you want to delete this item?');
-      if(r == true){
-      this.entries.splice(this.entries.findIndex(x => x.id === id), 1);
-      this.item = false;
-      }
-    }
   },
 
   mounted() {

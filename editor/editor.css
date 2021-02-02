@@ -37,11 +37,6 @@
   opacity: 0;
 }
 
-
-#editor .form-control{
-  margin-bottom: 15px;
-}
-
 #editor textarea{
   min-height: 150px;
   resize: none;
@@ -65,6 +60,7 @@
   letter-spacing: 0.03em;
   font-size: 14px;
   margin-bottom: 5px;
+  margin-top: 15px;
 }
 
 a.list-group-item:hover{
@@ -88,7 +84,14 @@ a.list-group-item:hover{
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); cursor: pointer; }
 
-.btn-outline-danger{
-  border: 1px solid #AAA;
-  color: #999;
+#editor .btn-outline-danger{
+  border: 1px solid #6c757d;
+  color: #6c757d;
+}
+
+#editor .btn-primary{
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 370px;
 }
