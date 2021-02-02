@@ -87,3 +87,8 @@ a.list-group-item:hover{
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); cursor: pointer; }
+
+.btn-outline-danger{
+  border: 1px solid #AAA;
+  color: #999;
+}

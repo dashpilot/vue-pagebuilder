@@ -15,6 +15,9 @@ const template = `
         <textarea class="form-control" v-if="value == 'rte'" v-model="item.body"></textarea>
       </div>
 
+      <div class="label">Delete</div>
+      <button class="btn btn-outline-danger" @click="deleteItem(item.id)">Delete</button>
+
     </div>
   </transition>
 
@@ -61,6 +64,14 @@ export default {
       console.log(newItem);
       this.entries.unshift(newItem);
       this.add = false;
+    },
+
+    deleteItem: function(id){
+      let r = confirm('Are you sure you want to delete this item?');
+      if(r == true){
+      this.entries.splice(this.entries.findIndex(x => x.id === id), 1);
+      this.item = false;
+      }
     }
   },
 
