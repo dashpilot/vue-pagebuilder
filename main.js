@@ -2,7 +2,7 @@ import Header from './components/header/header.js'
 import Post from './components/post/wdgt-post.js'
 import News from './components/news/wdgt-news.js'
 import Banner from './components/banner/wdgt-banner.js'
-import Editor from './editor/editor.js'
+import Editor from 'https://vue-pagebuilder.vercel.app/editor/editor.js' // example of loading the editor externally
 
 const {
   createApp
@@ -10,6 +10,7 @@ const {
 const App = createApp({
   data() {
     return {
+      editing: true,
       layouts: ['banner', 'post', 'news'],
       entries: [{
           id: "item-1",

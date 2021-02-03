@@ -26,7 +26,7 @@
         <wdgt-banner v-bind:item="item" v-if="item.layout == 'banner'"></wdgt-banner>
       </div>
 
-    <page-editor v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
+    <page-editor v-if="editing" v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
 
   </main>
 
