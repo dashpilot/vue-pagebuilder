@@ -16,7 +16,7 @@ section h1, section h2{
 }
 
 section h1{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 section h2{
@@ -48,4 +48,9 @@ section{
   font-size: 22px;
   padding: 10px 30px 10px 30px;
   margin-top: 25px;
+}
+
+.fa-big{
+  font-size: 45px;
+  margin-bottom: 15px;
 }

@@ -17,7 +17,8 @@ const App = createApp({
           title: "Sitefiction",
           subtitle: "Lorem ipsum dolor site amet.",
           button_text: "Contact Us",
-          button_link: "#"
+          button_link: "#",
+          icon: "fas fa-crown"
         },
         {
           id: "item-2",

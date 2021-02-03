@@ -1,3 +1,5 @@
+import Picker from './components/fa-picker.js'
+
 const template = `
 
   <transition name="fade">
@@ -9,10 +11,11 @@ const template = `
       </div>
       <br>
 
-      <div v-for="(value, key) in fields">
+      <div v-for="(val, key) in fields">
         <div class="label">{{key.replace('_', ' ')}}</div>
-        <input type="text" class="form-control" v-if="value == 'txt'" v-model="item[key]">
-        <textarea class="form-control" v-if="value == 'rte'" v-model="item[key]"></textarea>
+        <input type="text" class="form-control" v-if="val == 'txt'" v-model="item[key]">
+        <textarea class="form-control" v-if="val == 'rte'" v-model="item[key]"></textarea>
+        <fa-picker v-if="val == 'icon'" v-bind:value="''" @input="setIcon"></fa-picker>
       </div>
 
       <div class="label">Options</div>
@@ -57,10 +60,17 @@ export default {
     }
   },
 
+  components: {
+    'fa-picker': Picker,
+  },
+
   methods: {
     save: function(){
       alert(JSON.stringify(this.entries));
       this.item = false;
+    },
+    setIcon: function(e){
+      this.item.icon = e
     },
     deleteItem: function(id){
       let r = confirm('Are you sure you want to delete this item?');
