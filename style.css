@@ -11,8 +11,14 @@ section h1, section h2, section h3, section h4{
 }
 
 section h1, section h2{
-  font-size: 52px;
-  line-height: 52px;
+  font-size: 45px;
+  line-height: 45px;
+}
+
+section h3{
+  margin-top: 20px;
+  font-size: 35px;
+  line-height: 35px;
 }
 
 section h1{
