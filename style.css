@@ -40,3 +40,12 @@ section{
 #content:nth-child(odd){
   background-color: var(--main-bg-color);
 }
+
+.btn-secondary{
+  font-family: "Rubik", sans-serif;
+  background-color: #0087EE;
+  border: 0;
+  font-size: 22px;
+  padding: 10px 30px 10px 30px;
+  margin-top: 25px;
+}

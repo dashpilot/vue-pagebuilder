@@ -15,7 +15,9 @@ const App = createApp({
           id: "item-1",
           layout: "banner",
           title: "Sitefiction",
-          subtitle: "Lorem ipsum dolor site amet."
+          subtitle: "Lorem ipsum dolor site amet.",
+          button_text: "Contact Us",
+          button_link: "#"
         },
         {
           id: "item-2",
