@@ -12,14 +12,12 @@
 
   <script src="https://unpkg.com/vue@next"></script>
   <script src="main.js" type="module"></script>
-  
+
 </head>
 
 <body>
 
   <main>
-
-    <!-- <app-header bg-color="#E9ECEF">Welcome to my site</app-header> -->
 
       <div id="content" v-for="item in entries">
         <wdgt-post v-bind:item="item" v-if="item.layout == 'post'"></wdgt-post>

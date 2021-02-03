@@ -1,10 +1,9 @@
-import Header from './components/header/header.js'
 import Post from './components/post/post.js'
 import News from './components/news/news.js'
 import Banner from './components/banner/banner.js'
 import Featured from './components/featured/featured.js'
 import Features from './components/features/features.js'
-import Editor from 'https://vue-pagebuilder.vercel.app/editor/editor.js' // example of loading the editor externally
+import Editor from './editor/editor.js'
 
 const {
   createApp
@@ -56,7 +55,6 @@ const App = createApp({
   },
 
   components: {
-    'app-header': Header,
     'wdgt-post': Post,
     'wdgt-banner': Banner,
     'wdgt-news': News,

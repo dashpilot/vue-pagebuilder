@@ -1,4 +1,5 @@
 import Picker from './components/fa-picker.js'
+import Add from './components/add-content.js'
 
 const template = `
 
@@ -29,22 +30,7 @@ const template = `
     </div>
   </transition>
 
-  <transition name="fade">
-      <div id="adder" v-if="add">
-
-      <div class="editor-header">
-      <h4 class="float-left">Add Content</h4>
-      <div class="close" @click="add = false">&times;</div>
-      </div>
-      <br>
-
-      <img @click="addLayout" v-for="layout in layouts" :data-layout="layout" class="box img-fluid" :src="'components/'+layout+'/preview.png'" />
-
-    </div>
-  </transition>
-
-  <div id="dock"><img src="editor/img/add.png" class="grow" @click="add = true" /></div>
-
+  <add-content v-bind:layouts="layouts"></add-content>
 `
 
 export default {
@@ -56,12 +42,12 @@ export default {
     return {
       item: false,
       fields: false,
-      add: false
     }
   },
 
   components: {
     'fa-picker': Picker,
+    'add-content': Add,
   },
 
   methods: {
@@ -86,17 +72,6 @@ export default {
       console.log(to);
       var f = this.entries.splice(from, 1)[0];
       this.entries.splice(to, 0, f);
-    },
-    addLayout: function(event) {
-      let layout = event.target.getAttribute('data-layout');
-      let newItem = {};
-      newItem.id = "item-" + Date.now();
-      newItem.layout = layout;
-      newItem.title = 'Lorem Ipsum';
-      newItem.body = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend ligula ut augue scelerisque venenatis.';
-      console.log(newItem);
-      this.entries.unshift(newItem);
-      this.add = false;
     },
   },
 
