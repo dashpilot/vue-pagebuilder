@@ -1,7 +1,7 @@
 const template = `
-  <section :id="item.id" class="editable text-center" data-fields="title=txt">
+  <section :id="item.id" class="editable text-center" data-fields="title=txt&amp;subtitle=txt">
   <h1>{{item.title}}</h1>
-  <p>{{item.body}}</p>
+  <p>{{item.subtitle}}</p>
   </section>
   `
 

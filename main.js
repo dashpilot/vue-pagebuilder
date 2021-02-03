@@ -15,7 +15,7 @@ const App = createApp({
           id: "item-1",
           layout: "banner",
           title: "Sitefiction",
-          body: "Lorem ipsum dolor site amet."
+          subtitle: "Lorem ipsum dolor site amet."
         },
         {
           id: "item-2",
@@ -26,7 +26,7 @@ const App = createApp({
         {
           id: "item-3",
           layout: "news",
-          title: "Maecenas tincidunt in sem quis rutrum",
+          title: "Maecenas tincidunt sem quis rutrum",
           body: "Mauris in porttitor elit. Aenean elementum eleifend quam, in tristique eros auctor porta. Donec et est in tellus blandit feugiat id nec nunc."
         }
       ],

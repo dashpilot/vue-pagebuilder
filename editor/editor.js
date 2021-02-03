@@ -11,8 +11,8 @@ const template = `
 
       <div v-for="(value, key) in fields">
         <div class="label">{{key}}</div>
-        <input type="text" class="form-control" v-if="value == 'txt'" v-model="item.title">
-        <textarea class="form-control" v-if="value == 'rte'" v-model="item.body"></textarea>
+        <input type="text" class="form-control" v-if="value == 'txt'" v-model="item[key]">
+        <textarea class="form-control" v-if="value == 'rte'" v-model="item[key]"></textarea>
       </div>
 
       <div class="label">Options</div>
