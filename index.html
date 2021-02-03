@@ -16,14 +16,14 @@
 <body>
 
   <main>
-    <app-header bg-color="#E9ECEF">Welcome to my site</app-header>
 
-    <div class="container">
-      <span v-for="item in entries">
+    <!-- <app-header bg-color="#E9ECEF">Welcome to my site</app-header> -->
+
+      <div id="content" v-for="item in entries">
         <wdgt-post v-bind:item="item" v-if="item.layout == 'post'"></wdgt-post>
+        <wdgt-news v-bind:item="item" v-if="item.layout == 'news'"></wdgt-news>
         <wdgt-banner v-bind:item="item" v-if="item.layout == 'banner'"></wdgt-banner>
-      </span>
-    </div>
+      </div>
 
     <page-editor v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
 

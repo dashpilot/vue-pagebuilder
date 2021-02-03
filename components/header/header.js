@@ -1,5 +1,5 @@
 const template = `
-  <header class="jumbotron text-center" :style="{ 'background-color': bgColor }">
+  <header class="jumbotron text-center mb-0" :style="{ 'background-color': bgColor }">
     <h4>{{text}}</h4>
   </header>
 `

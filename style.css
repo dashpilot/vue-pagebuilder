@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;800&display=swap');
+
+:root {
+  --main-bg-color: #F7FAFC;
+}
+
+section h1, section h2, section h3, section h4{
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+section h1, section h2{
+  font-size: 52px;
+  line-height: 52px;
+}
+
+section h1{
+  margin-bottom: 15px;
+}
+
+section h2{
+  margin-bottom: 25px;
+}
+
+section p{
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  color: #4f5c65;
+  font-size: 20px;
+  line-height: 30px;
+}
+
 section{
   padding: 25px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#content:nth-child(odd){
+  background-color: var(--main-bg-color);
 }

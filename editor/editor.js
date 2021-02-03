@@ -35,9 +35,7 @@ const template = `
       </div>
       <br>
 
-      <div class="list-group">
-      <a @click="addLayout" class="list-group-item" v-for="layout in layouts" :data-layout="layout">{{layout}}</a>
-      </div>
+      <img @click="addLayout" v-for="layout in layouts" :data-layout="layout" class="box img-fluid" :src="'components/'+layout+'/preview.png'" />
 
     </div>
   </transition>
@@ -85,6 +83,7 @@ export default {
       newItem.id = "item-" + Date.now();
       newItem.layout = layout;
       newItem.title = 'Lorem Ipsum';
+      newItem.body = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend ligula ut augue scelerisque venenatis.';
       console.log(newItem);
       this.entries.unshift(newItem);
       this.add = false;

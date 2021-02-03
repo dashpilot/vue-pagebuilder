@@ -63,7 +63,13 @@
   margin-top: 15px;
 }
 
-a.list-group-item:hover{
+.box{
+  display: block;
+  border: 1px solid #DDD;
+  margin-bottom: 10px;
+}
+
+.box:hover{
   background-color: #F8F8F8;
   cursor: pointer;
   text-decoration: none;
