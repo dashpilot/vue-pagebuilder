@@ -44,7 +44,11 @@ section{
   padding-bottom: 100px;
 }
 
-#content:nth-child(odd) h1, #content:nth-child(odd) h2, #content:nth-child(odd) h3, #content:nth-child(odd) p, #content:nth-child(odd) .fas{
+#content:nth-child(odd) h1,
+#content:nth-child(odd) h2,
+#content:nth-child(odd) h3,
+#content:nth-child(odd) p,
+#content:nth-child(odd) .fas{
   color: var(--fg-color);
 }
 
@@ -54,11 +58,21 @@ section{
 
 .btn-secondary{
   font-family: "Rubik", sans-serif;
-  background-color: #0087EE;
-  border: 0;
-  font-size: 22px;
-  padding: 10px 30px 10px 30px;
+  border: 1px solid #000;
+  font-size: 20px;
+  padding: 8px 25px 8px 25px;
   margin-top: 25px;
+  background-color: transparent;
+}
+
+.btn-secondary:hover{
+  border: 1px solid #999;
+  background-color: transparent;
+}
+
+#content:nth-child(odd) .btn-secondary{
+  color: var(--fg-color);
+  border-color: color: var(--fg-color);
 }
 
 .fa-big{
