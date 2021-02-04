@@ -22,8 +22,12 @@
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
-.editable:hover{
-  background-color: #FFF3CD;
+.editable > .container{
+  border: 1px solid transparent;
+}
+
+.editable  > .container:hover{
+  border: 1px dashed #333;
   cursor: pointer;
 }
 

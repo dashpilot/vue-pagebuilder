@@ -5,6 +5,11 @@
   --fg-color: #000000;
 }
 
+.container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 section h1, section h2, section h3, section h4{
   font-family: "Rubik", sans-serif;
   font-weight: 600;
