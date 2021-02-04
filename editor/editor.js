@@ -30,7 +30,7 @@ const template = `
     </div>
   </transition>
 
-  <add-content v-bind:layouts="layouts"></add-content>
+  <add-content v-bind:layouts="layouts" v-bind:entries="entries"></add-content>
 `
 
 export default {

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600;800&display=swap');
 
 :root {
-  --main-bg-color: #F7FAFC;
+  --bg-color: #F7FAFC;
+  --fg-color: #000000;
 }
 
 section h1, section h2, section h3, section h4{
@@ -32,9 +33,9 @@ section h2{
 section p{
   font-family: "Rubik", sans-serif;
   font-weight: 300;
-  color: #4f5c65;
   font-size: 20px;
   line-height: 30px;
+  color: #4f5c65;
 }
 
 section{
@@ -43,8 +44,12 @@ section{
   padding-bottom: 100px;
 }
 
+#content:nth-child(odd) h1, #content:nth-child(odd) h2, #content:nth-child(odd) h3, #content:nth-child(odd) p, #content:nth-child(odd) .fas{
+  color: var(--fg-color);
+}
+
 #content:nth-child(odd){
-  background-color: var(--main-bg-color);
+  background-color: var(--bg-color);
 }
 
 .btn-secondary{
