@@ -86,7 +86,7 @@ export default {
       this.entries.unshift(newItem);
       this.add = false;
     },
-    setColor: function(hex, hex2){
+    setColor: function(hex, hex2) {
       this.color = hex;
       let root = document.documentElement;
       root.style.setProperty('--bg-color', hex);

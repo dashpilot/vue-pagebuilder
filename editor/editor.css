@@ -1,13 +1,19 @@
+/*
 #editor{
   position: fixed;
   top: 0;
-  right: 0;
+  right: -400px;
   width: 400px;
   height: 100%;
   background-color: white;
   border-left: 1px solid #DDD;
   padding: 15px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+*/
+
+.editor{
+  overflow-y: auto;
 }
 
 #adder, #designer{
@@ -31,6 +37,7 @@
   cursor: pointer;
 }
 
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
@@ -41,13 +48,30 @@
   opacity: 0;
 }
 
-#editor textarea{
-  min-height: 120px;
+.slidein-right {
+  width: 400px;
+  padding: 25px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+
+.slide-right-enter-active, .slide-right-leave-active {
+  right: -100%;
+}
+
+.editor textarea{
+  min-height: 200px;
   resize: none;
 }
 
 .editor-header{
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 .editor-header h4{
@@ -64,7 +88,11 @@
   letter-spacing: 0.03em;
   font-size: 14px;
   margin-bottom: 5px;
-  margin-top: 15px;
+  margin-top: 20px;
+}
+
+.save{
+  margin-top: 30px;
 }
 
 .box{
