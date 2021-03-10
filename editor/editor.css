@@ -152,12 +152,19 @@
 
 .swatch{
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  vertical-align: top;
+  width: 32px;
+  height: 32px;
   margin-right: 11px;
-  margin-top: 6px;
+  margin-bottom: 6px;
   border-radius: 6px;
   cursor: pointer;
+  text-align: center;
+  border: 1px solid #DDD;
+}
+
+.fa-center{
+  margin-top: 8px;
 }
 
 .w-100px{
