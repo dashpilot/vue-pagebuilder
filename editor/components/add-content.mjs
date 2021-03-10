@@ -7,10 +7,11 @@ const template = `
       <h4 class="float-left">Add Content</h4>
       <div class="close" @click="add = false">&times;</div>
       </div>
-      <br><br>
+      <div class="editor-content mt-4">
 
       <img @click="addLayout" v-for="layout in layouts" :data-layout="layout" class="box img-fluid" :src="'components/'+layout+'/preview.png'" />
 
+      </div>
     </div>
   </transition>
 
@@ -21,7 +22,8 @@ const template = `
       <h4 class="float-left">Change Design</h4>
       <div class="close" @click="designer = false">&times;</div>
       </div>
-      <br>
+
+    <div class="editor-content">
 
       <div class="label">Color</div>
 
@@ -65,8 +67,11 @@ const template = `
     <a class="list-group-item" @click="setFont('Lobster')"><i class="fas fa-check mr-2" v-if="font == 'Lobster'"></i> Lobster</a>
     <a class="list-group-item" @click="setFont('Playfair Display')"><i class="fas fa-check mr-2" v-if="font == 'Playfair Display'"></i> Playfair Display</a>
     <a class="list-group-item" @click="setFont('Raleway')"><i class="fas fa-check mr-2" v-if="font == 'Raleway'"></i> Raleway</a>
+    <a class="list-group-item" @click="setFont('Cutive Mono')"><i class="fas fa-check mr-2" v-if="font == 'Cutive Mono'"></i> Cutive Mono</a>
     <a class="list-group-item" @click="setFont('Helvetica')"><i class="fas fa-check mr-2" v-if="font == 'Helvetica'"></i> Helvetica</a>
     <a class="list-group-item" @click="setFont('Georgia')"><i class="fas fa-check mr-2" v-if="font == 'Georgia'"></i> Georgia</a>
+    </div>
+
     </div>
 
     </div>
@@ -123,6 +128,10 @@ export default {
       let root = document.documentElement;
       root.style.setProperty('--font', font);
       root.style.setProperty('--spacing', spacing);
+    },
+    swapStyleSheet(font) {
+      let sheet = 'css/' + font;
+      document.getElementById("fonts").setAttribute("href", sheet);
     }
   },
 

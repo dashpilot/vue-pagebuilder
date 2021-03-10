@@ -10,7 +10,7 @@ const template = `
       <h4 class="float-left">Edit</h4>
       <div class="close" @click="item = false">&times;</div>
       </div>
-      <br>
+      <div class="editor-content">
 
       <div v-for="(val, key) in fields">
         <div class="label">{{key.replace('_', ' ')}}</div>
@@ -27,6 +27,7 @@ const template = `
 
       <button class="btn btn-outline-success mb-5 w-100 save" @click="save">Save</button>
 
+      </div>
     </div>
   </transition>
 
