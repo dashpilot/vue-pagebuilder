@@ -1,4 +1,4 @@
-import helpers from './../helpers.js'
+import helpers from './../helpers.mjs'
 
 const template = `
   <section :id="item.id" class="editable" data-fields="title=txt&amp;body=rte&amp;title2=txt&amp;body2=rte">

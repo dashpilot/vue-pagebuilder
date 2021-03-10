@@ -1,9 +1,9 @@
-import Post from './components/post/post.js'
-import News from './components/news/news.js'
-import Banner from './components/banner/banner.js'
-import Featured from './components/featured/featured.js'
-import Features from './components/features/features.js'
-import Editor from './editor/editor.js'
+import Post from './components/post/post.mjs'
+import News from './components/news/news.mjs'
+import Banner from './components/banner/banner.mjs'
+import Featured from './components/featured/featured.mjs'
+import Features from './components/features/features.mjs'
+import Editor from './editor/editor.mjs'
 
 const {
   createApp
@@ -45,10 +45,10 @@ const App = createApp({
   },
 
   methods: {
-    defaultVal(key, def){
-      if(key==''){
+    defaultVal(key, def) {
+      if (key == '') {
         return def;
-      }else{
+      } else {
         return key;
       }
     }

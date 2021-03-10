@@ -1,5 +1,5 @@
-import Picker from './components/fa-picker.js'
-import Add from './components/add-content.js'
+import Picker from './components/fa-picker.mjs'
+import Add from './components/add-content.mjs'
 
 const template = `
 
@@ -51,23 +51,23 @@ export default {
   },
 
   methods: {
-    save: function(){
+    save: function() {
       alert(JSON.stringify(this.entries));
       this.item = false;
     },
-    setIcon: function(e){
+    setIcon: function(e) {
       this.item.icon = e
     },
-    deleteItem: function(id){
+    deleteItem: function(id) {
       let r = confirm('Are you sure you want to delete this item?');
-      if(r == true){
-      this.entries.splice(this.entries.findIndex(x => x.id === id), 1);
-      this.item = false;
+      if (r == true) {
+        this.entries.splice(this.entries.findIndex(x => x.id === id), 1);
+        this.item = false;
       }
     },
     moveItem: function(id) {
       var from = this.entries.findIndex(x => x.id == id);
-      var to = from +1;
+      var to = from + 1;
       console.log(from);
       console.log(to);
       var f = this.entries.splice(from, 1)[0];
