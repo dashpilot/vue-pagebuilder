@@ -16,7 +16,7 @@ const template = `
         <div class="label">{{key.replace('_', ' ')}}</div>
         <input type="text" class="form-control" v-if="val == 'txt'" v-model="item[key]">
         <textarea class="form-control" v-if="val == 'rte'" v-model="item[key]"></textarea>
-        <fa-picker v-if="val == 'icon'" @input="setIcon"></fa-picker><!-- @input="setIcon" -->
+        <fa-picker v-if="val == 'icon'" v-bind:mykey="key" v-bind:value="item[key]" @input="setIcon"></fa-picker><!-- @input="setIcon" -->
       </div>
 
       <div class="label">Options</div>
@@ -56,7 +56,7 @@ export default {
       this.item = false;
     },
     setIcon: function(e) {
-      this.item.icon = e
+      this.item[e.key] = e.value;
     },
     deleteItem: function(id) {
       let r = confirm('Are you sure you want to delete this item?');

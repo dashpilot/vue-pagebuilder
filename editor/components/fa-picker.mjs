@@ -1,14 +1,14 @@
 const template = `
-<button id="launchIconPicker" class="btn btn-outline-secondary" data-iconpicker-input="#iconPicker" data-iconpicker-preview="#icon-preview">
-  <i id="icon-preview" :class="value"></i>
+<button :id="'launchIconPicker-'+mykey" class="btn btn-outline-secondary" :data-iconpicker-input="'#iconPicker-'+mykey" :data-iconpicker-preview="'#icon-preview-'+mykey">
+  <i :id="'icon-preview-'+mykey" :class="value"></i>
   &nbsp;Choose Icon</button>
-<input type="hidden" id="iconPicker" class="form-control">
+<input type="hidden" :id="'iconPicker-' + mykey" class="form-control">
 `
 
 export default {
   template,
 
-  props: ['value'],
+  props: ['mykey', 'value'],
   emits: ["input"],
   mounted() {
     var app = this;
@@ -22,9 +22,12 @@ export default {
       noResultsFound: 'No results found.', // v1.5.0 and the next versions
       borderRadius: '20px', // v1.5.0 and the next versions
     });
-    IconPicker.Run('#launchIconPicker', function() {
+    IconPicker.Run('#launchIconPicker-' + app.mykey, function() {
       //app.value = document.querySelector('#iconPicker').value;
-      app.$emit("input", document.querySelector('#iconPicker').value);
+      app.$emit("input", {
+        key: app.mykey,
+        value: document.querySelector('#iconPicker-' + app.mykey).value
+      });
     });
   }
 };
