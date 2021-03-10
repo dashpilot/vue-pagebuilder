@@ -16,7 +16,7 @@ const template = `
         <div class="label">{{key.replace('_', ' ')}}</div>
         <input type="text" class="form-control" v-if="val == 'txt'" v-model="item[key]">
         <textarea class="form-control" v-if="val == 'rte'" v-model="item[key]"></textarea>
-        <fa-picker v-if="val == 'icon'" v-bind:value="''" @input="setIcon"></fa-picker>
+        <fa-picker v-if="val == 'icon'" @input="setIcon"></fa-picker><!-- @input="setIcon" -->
       </div>
 
       <div class="label">Options</div>
