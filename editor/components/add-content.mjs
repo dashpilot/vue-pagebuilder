@@ -58,6 +58,17 @@ const template = `
       <div class="swatch" style="background-color: #FFFFFF; border: 1px solid #DDD;" @click="setColor('#FFFFFF', '#000')"></div>
 </div>
 
+    <div class="label">Font</div>
+
+    <div class="list-group">
+    <a class="list-group-item" @click="setFont('Rubik')"><i class="fas fa-check mr-2" v-if="font == 'Rubik'"></i> Default</a>
+    <a class="list-group-item" @click="setFont('Lobster')"><i class="fas fa-check mr-2" v-if="font == 'Lobster'"></i> Lobster</a>
+    <a class="list-group-item" @click="setFont('Playfair Display')"><i class="fas fa-check mr-2" v-if="font == 'Playfair Display'"></i> Playfair Display</a>
+    <a class="list-group-item" @click="setFont('Raleway')"><i class="fas fa-check mr-2" v-if="font == 'Raleway'"></i> Raleway</a>
+    <a class="list-group-item" @click="setFont('Helvetica')"><i class="fas fa-check mr-2" v-if="font == 'Helvetica'"></i> Helvetica</a>
+    <a class="list-group-item" @click="setFont('Georgia')"><i class="fas fa-check mr-2" v-if="font == 'Georgia'"></i> Georgia</a>
+    </div>
+
     </div>
   </transition>
 
@@ -77,8 +88,10 @@ export default {
     return {
       add: false,
       designer: false,
+      choose: false,
       color: '#1CA085',
-      choose: false
+      font: 'Rubik',
+      spacing: '-0.04em'
     }
   },
 
@@ -100,6 +113,16 @@ export default {
       let root = document.documentElement;
       root.style.setProperty('--bg-color', hex);
       root.style.setProperty('--fg-color', hex2);
+    },
+    setFont: function(font) {
+      this.font = font;
+      let spacing = '0';
+      if (font == 'Rubik') {
+        spacing = '-0.04em';
+      }
+      let root = document.documentElement;
+      root.style.setProperty('--font', font);
+      root.style.setProperty('--spacing', spacing);
     }
   },
 

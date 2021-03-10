@@ -150,27 +150,12 @@
   width: 100px;
 }
 
+a.list-group-item{
+  color: black;
+}
 
-.fasearch {
-  .fasearch-content {
-    padding: 5px;
-    max-height: 400px;
-    min-height: 100px;
-    overflow: hidden auto;
-    position: absolute;
-    background: white;
-    z-index: 999;
-    left: 6px;
-    right: 6px;
-    box-shadow: 0 0 1px 0px;
-
-    button {
-      width: 70px;
-    }
-  }
-
-  .tab-pane {
-    box-sizing: border-box;
-    position: relative;
-  }
+a.list-group-item:hover{
+  background-color: #F8F8F8;
+  text-decoration: none;
+  cursor: pointer;
 }

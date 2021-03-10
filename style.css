@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&display=swap');
-
 :root {
   --bg-color: #F7FAFC;
   --fg-color: #000000;
+  --font: "Rubik";
+  --spacing: "-0.04em";
 }
 
 .container{
@@ -11,9 +11,9 @@
 }
 
 section h1, section h2, section h3, section h4{
-  font-family: "Rubik", sans-serif;
+  font-family: var(--font);
+  letter-spacing: var(--spacing);
   font-weight: 600;
-  letter-spacing: -0.04em;
 }
 
 section h1, section h2{
