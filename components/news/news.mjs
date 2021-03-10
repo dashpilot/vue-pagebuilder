@@ -20,6 +20,6 @@ export default {
   props: ['item'],
 
   mounted() {
-    console.log('Footer component mounted.')
+    console.log('News component mounted.')
   }
 }
