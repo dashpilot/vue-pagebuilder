@@ -71,7 +71,7 @@
 }
 
 .editor-header{
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .editor-header h4{
@@ -145,6 +145,11 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+.w-100px{
+  width: 100px;
+}
+
 
 .fasearch {
   .fasearch-content {

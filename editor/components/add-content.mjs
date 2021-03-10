@@ -7,7 +7,7 @@ const template = `
       <h4 class="float-left">Add Content</h4>
       <div class="close" @click="add = false">&times;</div>
       </div>
-      <br>
+      <br><br>
 
       <img @click="addLayout" v-for="layout in layouts" :data-layout="layout" class="box img-fluid" :src="'components/'+layout+'/preview.png'" />
 
@@ -24,8 +24,16 @@ const template = `
       <br>
 
       <div class="label">Color</div>
-      <input class="form-control" v-model="color">
 
+
+<div class="input-group mb-3">
+  <input class="form-control" v-model="color" @change="setColor(color, '#000')">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary w-100px" type="button" @click="choose=!choose"><span v-if="!choose">Choose</span><span v-if="choose">Close</span></button>
+  </div>
+</div>
+
+<div v-if="choose">
       <div class="swatch" style="background-color: #1FBC9C" @click="setColor('#1FBC9C', '#FFF')"></div>
       <div class="swatch" style="background-color: #1CA085" @click="setColor('#1CA085', '#FFF')"></div>
       <div class="swatch" style="background-color: #2ECC70" @click="setColor('#2ECC70', '#FFF')"></div>
@@ -48,7 +56,7 @@ const template = `
 
       <div class="swatch" style="background-color: #F7FAFC" @click="setColor('#F7FAFC', '#000')"></div>
       <div class="swatch" style="background-color: #FFFFFF; border: 1px solid #DDD;" @click="setColor('#FFFFFF', '#000')"></div>
-
+</div>
 
     </div>
   </transition>
@@ -69,7 +77,8 @@ export default {
     return {
       add: false,
       designer: false,
-      color: '#1CA085'
+      color: '#1CA085',
+      choose: false
     }
   },
 

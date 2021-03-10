@@ -1,5 +1,5 @@
 const template = `
-  <section :id="item.id" class="editable text-center" data-fields="title=txt&amp;subtitle=txt&amp;button_text=txt&amp;button_link=txt&amp;icon=icon&amp;&amp;icon_2=icon">
+  <section :id="item.id" class="editable text-center" data-fields="title=txt&amp;subtitle=txt&amp;button_text=txt&amp;button_link=txt&amp;icon=icon&amp;">
 
 <div class="container">
 
@@ -8,7 +8,7 @@ const template = `
   <h1>{{item.title}}</h1>
   <p>{{item.subtitle}}</p>
 
-  <a :href="item.button_link" class="btn btn-secondary" v-if="item.button_text"><i :class="item.icon_2"></i> &nbsp;{{item.button_text}}</a>
+  <a :href="item.button_link" class="btn btn-secondary" v-if="item.button_text">{{item.button_text}}</a>
 
 </div>
 

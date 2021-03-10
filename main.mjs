@@ -20,8 +20,7 @@ const App = createApp({
           subtitle: "Lorem ipsum dolor site amet.",
           button_text: "Contact Us",
           button_link: "#",
-          icon: "fas fa-robot",
-          icon_2: "fas fa-envelope"
+          icon: "fas fa-bolt"
         },
         {
           id: "item-2",
