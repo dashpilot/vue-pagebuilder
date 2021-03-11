@@ -1,5 +1,5 @@
 const template = `
-  <section :id="item.id" class="editable" data-fields="title=txt&amp;body=rte">
+  <section :id="item.id" class="editable" data-fields="title=txt&amp;body=rte&amp;image=img">
   <div class="container">
     <div class="row">
     <div class="col-md-6">
@@ -7,7 +7,11 @@ const template = `
       <p>{{item.body}}</p>
     </div>
     <div class="col-md-6">
-      <img src="editor/img/placeholder.jpg" class="img-fluid" />
+
+        <img v-if="item.image" :src="item.image" class="img-fluid" />
+        <img v-else src="editor/img/placeholder.jpg" class="img-fluid" />
+
+      </div>
     </div>
     </div>
   </div>

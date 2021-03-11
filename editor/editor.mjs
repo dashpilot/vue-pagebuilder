@@ -1,5 +1,6 @@
 import Picker from './components/fa-picker.mjs'
 import Add from './components/add-content.mjs'
+import Image from './components/image-resize.mjs'
 
 const template = `
 
@@ -16,7 +17,8 @@ const template = `
         <div class="label">{{key.replace('_', ' ')}}</div>
         <input type="text" class="form-control" v-if="val == 'txt'" v-model="item[key]">
         <textarea class="form-control" v-if="val == 'rte'" v-model="item[key]"></textarea>
-        <fa-picker v-if="val == 'icon'" v-bind:mykey="key" v-bind:value="item[key]" @input="setIcon"></fa-picker><!-- @input="setIcon" -->
+        <fa-picker v-if="val == 'icon'" v-bind:mykey="key" v-bind:value="item[key]" @input="setIcon"></fa-picker>
+        <image-resize v-if="val == 'img'" v-bind:mykey="key" @image="setImage"></image-resize>
       </div>
 
       <div class="label">Options</div>
@@ -49,6 +51,7 @@ export default {
   components: {
     'fa-picker': Picker,
     'add-content': Add,
+    'image-resize': Image,
   },
 
   methods: {
@@ -57,6 +60,9 @@ export default {
       this.item = false;
     },
     setIcon: function(e) {
+      this.item[e.key] = e.value;
+    },
+    setImage: function(e) {
       this.item[e.key] = e.value;
     },
     deleteItem: function(id) {
