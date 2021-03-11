@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue Pagebuilder</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="editor/editor.css">
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/simple-color-picker/dist/simple-color-picker.umd.js"></script>
+  <script src="https://vue-pagebuilder.vercel.app/main.mjs" type="module"></script>
+  <link rel="stylesheet" href="https://vue-pagebuilder.vercel.app/editor/js/iconpicker/iconpicker-1.5.0.css" />
+  <script src="https://vue-pagebuilder.vercel.app/editor/js/iconpicker/iconpicker-1.5.0.js"></script>
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <main>
+
+    <div id="content" v-for="item in entries">
+      <wdgt-post v-bind:item="item" v-if="item.layout == 'post'"></wdgt-post>
+      <wdgt-news v-bind:item="item" v-if="item.layout == 'news'"></wdgt-news>
+      <wdgt-banner v-bind:item="item" v-if="item.layout == 'banner'"></wdgt-banner>
+      <wdgt-featured v-bind:item="item" v-if="item.layout == 'featured'"></wdgt-featured>
+      <wdgt-features v-bind:item="item" v-if="item.layout == 'features'"></wdgt-features>
+    </div>
+
+    <page-editor v-if="editing" v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
+
+  </main>
+
+
+</body>
+
+</html>
