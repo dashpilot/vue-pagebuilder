@@ -1,0 +1,21 @@
+{
+  "name": "vue-pagebuilder",
+  "version": "1.0.0",
+  "description": "A visual pagebuilder for Vue 3",
+  "main": "main.js",
+  "scripts": {
+    "watch": "rollup ./main.mjs --file ./build/bundle.mjs --format es --watch",
+    "build": "rollup ./main.mjs --file ./build/bundle.mjs --format es",
+    "help": "rollup --help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashpilot/vue-pagebuilder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dashpilot/vue-pagebuilder/issues"
+  },
+  "homepage": "https://github.com/dashpilot/vue-pagebuilder#readme"
+}
