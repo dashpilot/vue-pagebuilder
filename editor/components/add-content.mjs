@@ -1,7 +1,7 @@
 const template = `
 
-  <transition name="fade">
-      <div id="adder" v-if="add">
+  <transition name="slide-left">
+      <div class="slidein-left" id="adder" v-if="add">
 
       <div class="editor-header">
       <h4 class="float-left">Add Content</h4>
@@ -15,8 +15,8 @@ const template = `
     </div>
   </transition>
 
-  <transition name="fade">
-      <div id="designer" v-if="designer">
+  <transition name="slide-left">
+      <div class="slidein-left" id="designer" v-if="designer">
 
       <div class="editor-header">
       <h4 class="float-left">Change Design</h4>

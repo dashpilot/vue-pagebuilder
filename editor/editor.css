@@ -19,7 +19,6 @@
 #adder, #designer{
   position: fixed;
   top: 0;
-  left: 0;
   width: 300px;
   height: 100%;
   background-color: white;
@@ -52,16 +51,37 @@
   position: fixed;
   z-index: 100;
   top: 0;
-  right: 0;
+
   height: 100%;
   background-color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s;
+  right: 0px;
 }
 
-.slide-right-enter-active, .slide-right-leave-active {
-  right: -100%;
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: 0.5s ease;
 }
+
+.slide-right-enter-from,
+.slide-right-leave-to {
+  right: -400px;
+}
+
+.slidein-left{
+    left: 0;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: 0.5s ease;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+  left: -300px;
+}
+
 
 .editor textarea{
   min-height: 200px;
