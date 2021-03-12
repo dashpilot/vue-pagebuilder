@@ -36,6 +36,7 @@
   background-color: white;
   border-left: 1px solid #DDD;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  overflow-y: auto;
 }
 
 
@@ -109,6 +110,16 @@
   padding-right: 20px;
   height: 50px;
   border-bottom: 1px solid #DDDDDD;
+  position: fixed;
+  z-index: 99;
+}
+
+.slidein-left .editor-header{
+  width: 300px;
+}
+
+.slidein-right .editor-header{
+  width: 400px;
 }
 
 .editor-header h4{
@@ -116,14 +127,13 @@
   padding-top: 5px;
 }
 
-
 .close:hover{
   cursor: pointer;
 }
 
 .editor-content{
   padding: 20px;
-  padding-top: 0;
+  padding-top: 50px;
 }
 
 .editor-content:first-child{
