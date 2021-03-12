@@ -13,7 +13,7 @@ const template = `
 
       </div>
     </div>
-    </div>
+  </div>
   </section>
   `
 

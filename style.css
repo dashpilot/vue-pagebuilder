@@ -57,7 +57,19 @@ section{
   color: var(--fg-color);
 }
 
+#header:nth-child(odd) h1,
+#header:nth-child(odd) h2,
+#header:nth-child(odd) h3,
+#header:nth-child(odd) p,
+#header:nth-child(odd) .fas{
+  color: var(--fg-color);
+}
+
 #content:nth-child(odd){
+  background-color: var(--bg-color);
+}
+
+#header:nth-child(odd){
   background-color: var(--bg-color);
 }
 
@@ -73,6 +85,11 @@ section{
 .btn-secondary:hover{
   border: 1px solid #999;
   background-color: transparent;
+}
+
+#header:nth-child(odd) .btn-secondary{
+  color: var(--fg-color);
+  border-color: color: var(--fg-color);
 }
 
 #content:nth-child(odd) .btn-secondary{

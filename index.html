@@ -11,9 +11,11 @@
   <link rel="stylesheet" href="editor/editor.css">
 
   <script src="https://unpkg.com/vue@next"></script>
-  <script src="build/bundle.mjs" type="module"></script>
+  <script src="main.mjs" type="module"></script>
+  <script type="module" src="https://unpkg.com/@deckdeckgo/inline-editor@latest/dist/deckdeckgo-inline-editor/deckdeckgo-inline-editor.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.css" />
   <script src="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.min.js"></script>
+
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap" rel="stylesheet">
@@ -24,15 +26,20 @@
 
   <main>
 
+    <div id="header" v-for="item in entries">
+      <wdgt-header v-bind:item="item" v-if="item.layout == 'header'"></wdgt-header>
+    </div>
+
     <div id="content" v-for="item in entries">
       <wdgt-post v-bind:item="item" v-if="item.layout == 'post'"></wdgt-post>
       <wdgt-news v-bind:item="item" v-if="item.layout == 'news'"></wdgt-news>
-      <wdgt-banner v-bind:item="item" v-if="item.layout == 'banner'"></wdgt-banner>
+
       <wdgt-featured v-bind:item="item" v-if="item.layout == 'featured'"></wdgt-featured>
       <wdgt-features v-bind:item="item" v-if="item.layout == 'features'"></wdgt-features>
     </div>
 
     <page-editor v-if="editing" v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
+    <deckgo-inline-editor background-color="false" align="false" containers="h1,h2,h3,h4,h5,h6,div,p"></deckgo-inline-editor>
 
   </main>
 

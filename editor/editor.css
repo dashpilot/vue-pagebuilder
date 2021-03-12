@@ -1,3 +1,15 @@
+.edit{
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(img/cog.png);
+  background-size: cover;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
 /*
 #editor{
   position: fixed;
@@ -25,6 +37,7 @@
   border-left: 1px solid #DDD;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
+
 
 .editable > .container{
   border: 1px solid transparent;

@@ -1,6 +1,6 @@
+import Header from './components/header/header.mjs'
 import Post from './components/post/post.mjs'
 import News from './components/news/news.mjs'
-import Banner from './components/banner/banner.mjs'
 import Featured from './components/featured/featured.mjs'
 import Features from './components/features/features.mjs'
 import Editor from './editor/editor.mjs'
@@ -12,10 +12,10 @@ const App = createApp({
   data() {
     return {
       editing: true,
-      layouts: ['banner', 'post', 'news', 'featured', 'features'],
+      layouts: ['post', 'news', 'featured', 'features'],
       entries: [{
           id: "item-1",
-          layout: "banner",
+          layout: "header",
           title: "Sitefiction",
           subtitle: "Lorem ipsum dolor site amet.",
           button_text: "Contact Us",
@@ -56,7 +56,7 @@ const App = createApp({
 
   components: {
     'wdgt-post': Post,
-    'wdgt-banner': Banner,
+    'wdgt-header': Header,
     'wdgt-news': News,
     'wdgt-featured': Featured,
     'wdgt-features': Features,

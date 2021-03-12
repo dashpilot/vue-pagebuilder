@@ -1,5 +1,5 @@
 const template = `
-  <section :id="item.id" class="editable text-center" data-fields="title=txt&amp;subtitle=txt&amp;button_text=txt&amp;button_link=txt&amp;icon=icon&amp;">
+  <section :id="item.id" class="editable text-center" data-fields="title=txt&amp;subtitle=txt&amp;button_text=txt&amp;button_link=txt&amp;icon=icon">
 
 <div class="container">
 
