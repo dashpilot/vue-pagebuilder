@@ -19,6 +19,6 @@ export default {
   props: ['item'],
 
   mounted() {
-    console.log('Post component mounted.')
+    //console.log('Post component mounted.')
   }
 }

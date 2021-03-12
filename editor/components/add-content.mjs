@@ -60,9 +60,30 @@ const template = `
     </div>
   </transition>
 
+
+  <transition name="slide-left">
+      <div class="slidein-left" id="saver" v-if="save">
+
+      <div class="editor-header">
+      <h4 class="float-left">Save</h4>
+      <div class="close" @click="save = false">&times;</div>
+      </div>
+      <div class="editor-content mt-4">
+
+<div class="label"><span>Download</span>  <span class="badge badge-pill badge-success float-right">free</span></div>
+
+<p class="info">Download your design as a html file, so you can tweak it further and upload it to any hosting you like.</p>
+
+<button class="btn btn-outline-dark w-100" @click="downloadFile"><i class="fa fa-download"></i> &nbsp;Download</button>
+
+      </div>
+    </div>
+  </transition>
+
   <div id="dock">
-    <img src="editor/img/add.png" class="grow" @click="add = true; designer = false;" />
-    <img src="editor/img/settings.png" class="grow" @click="designer = true; add = false;" />
+    <img src="editor/img/add.png" class="grow" @click="add = true; designer = false; save= false;" />
+    <img src="editor/img/settings.png" class="grow" @click="designer = true; add = false; save = false;" />
+    <img src="editor/img/save.png" class="grow" @click="save = true; designer = false; add = false;" />
   </div>
 
 `
@@ -77,6 +98,7 @@ export default {
       add: false,
       designer: false,
       choose: false,
+      save: false,
       color: '#F7FAFC',
       font: 'Rubik',
       spacing: '-0.04em',
@@ -117,10 +139,31 @@ export default {
     swapStyleSheet(font) {
       let sheet = 'css/' + font;
       document.getElementById("fonts").setAttribute("href", sheet);
+    },
+    downloadFile() {
+      let header = `<!DOCTYPE html>
+    		<html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>My Website</title>
+
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+          <link rel="stylesheet" href="https://vue-pagebuilder.vercel.app/style.css">
+
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap" rel="stylesheet">
+
+        </head>
+    		<body>\n\n`;
+      let html = document.querySelector('#page').innerHTML;
+      let footer = `\n\n</body>
+    		</html>`;
+      dl('index.html', html_beautify(header + html.replaceAll('<!---->', '') + footer));
     }
   },
   mounted() {
-    console.log('Adder component mounted.')
+    //console.log('Adder component mounted.')
   }
 }
 
@@ -152,5 +195,22 @@ function colorContrast(hex) {
     return "#000000";
   } else {
     return "#ffffff";
+  }
+}
+
+
+function dl(filename, data) {
+  var blob = new Blob([data], {
+    type: 'text/html'
+  });
+  if (window.navigator.msSaveOrOpenBlob) {
+    window.navigator.msSaveBlob(blob, filename);
+  } else {
+    var elem = window.document.createElement('a');
+    elem.href = window.URL.createObjectURL(blob);
+    elem.download = filename;
+    document.body.appendChild(elem);
+    elem.click();
+    document.body.removeChild(elem);
   }
 }

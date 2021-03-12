@@ -23,6 +23,6 @@ export default {
   props: ['item'],
 
   mounted() {
-    console.log('News component mounted.')
+    //console.log('News component mounted.')
   }
 }

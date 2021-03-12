@@ -21,14 +21,13 @@ const template = `
         <image-resize v-if="val == 'img'" v-bind:mykey="key" @image="setImage"></image-resize>
       </div>
 
-
-<span v-if="item.layout != 'header'">
-      <div class="label">Options</div>
-      <div class="btn-group w-100">
-      <button class="btn btn-outline-secondary w-50" @click="moveItem(item.id)">Move Down</button>
-      <button class="btn btn-outline-secondary w-50" @click="deleteItem(item.id)">Delete</button>
-      </div>
-</span>
+      <span v-if="item.layout != 'header'">
+            <div class="label">Options</div>
+            <div class="btn-group w-100">
+            <button class="btn btn-outline-secondary w-50" @click="moveItem(item.id)">Move Down</button>
+            <button class="btn btn-outline-secondary w-50" @click="deleteItem(item.id)">Delete</button>
+            </div>
+      </span>
 
       <button class="btn btn-outline-success mb-5 w-100 save" @click="save">Save</button>
 
@@ -86,7 +85,7 @@ export default {
   },
 
   mounted() {
-    console.log('Editor component mounted.')
+    //console.log('Editor component mounted.')
 
     var app = this;
     document.body.addEventListener('click', function(e) {

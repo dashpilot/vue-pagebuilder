@@ -28,7 +28,7 @@
   overflow-y: auto;
 }
 
-#adder, #designer{
+#adder, #designer, #saver{
   position: fixed;
   top: 0;
   width: 300px;
@@ -212,4 +212,9 @@ a.list-group-item:hover{
   background-color: #F8F8F8;
   text-decoration: none;
   cursor: pointer;
+}
+
+.info{
+  padding-top: 5px;
+  color: #777;
 }
