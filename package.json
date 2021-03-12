@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dashpilot/vue-pagebuilder/issues"
   },
-  "homepage": "https://github.com/dashpilot/vue-pagebuilder#readme"
+  "homepage": "https://github.com/dashpilot/vue-pagebuilder#readme",
+  "devdependencies": {
+    "rollup": "^2.41.1"
+  }
 }
