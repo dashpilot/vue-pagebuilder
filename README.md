@@ -6,6 +6,8 @@ Features:
 - Rearrange and delete layout blocks
 - Edit text and images
 - Font Awesome icon chooser
+- Change colors and fonts
+- Download generated HTML
 
 # preview
 ![App Preview](https://github.com/dashpilot/vue-pagebuilder/blob/main/editor/img/app-preview.png?raw=true)
