@@ -27,6 +27,6 @@ export default {
   },
 
   mounted() {
-    console.log('Features component mounted.')
+    //console.log('Features component mounted.')
   }
 }

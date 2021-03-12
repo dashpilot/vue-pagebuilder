@@ -21,6 +21,6 @@ export default {
   props: ['item'],
 
   mounted() {
-    console.log('Banner component mounted.')
+    //console.log('Banner component mounted.')
   }
 }

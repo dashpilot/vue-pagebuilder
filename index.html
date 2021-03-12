@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="editor/editor.css">
 
-  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.7/vue.global.prod.js" integrity="sha512-SQkI+lSIpzqYFNvIbmY/EutPD7x5hU0bwppRywvIR9ymIHudH/P0ECQuc4fyugI0fRlb9b6zKcE3Lq0V//TVpw==" crossorigin="anonymous"></script>
+  <!-- <script src="https://unpkg.com/vue@next"></script> -->
   <script src="main.mjs" type="module"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.css" />
@@ -42,6 +43,10 @@
 
         <template v-if="item.layout == 'news'">
           <wdgt-news v-bind:item="item"></wdgt-news>
+        </template>
+
+        <template v-if="item.layout == 'newsleft'">
+          <wdgt-newsleft v-bind:item="item"></wdgt-newsleft>
         </template>
 
         <template v-if="item.layout == 'featured'">

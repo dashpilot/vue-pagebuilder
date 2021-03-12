@@ -1,6 +1,7 @@
 import Header from './components/header/header.mjs'
 import Post from './components/post/post.mjs'
 import News from './components/news/news.mjs'
+import NewsLeft from './components/newsleft/newsleft.mjs'
 import Featured from './components/featured/featured.mjs'
 import Features from './components/features/features.mjs'
 import Editor from './editor/editor.mjs'
@@ -12,11 +13,11 @@ const App = createApp({
   data() {
     return {
       editing: true,
-      layouts: ['post', 'news', 'featured', 'features'],
+      layouts: ['featured', 'post', 'news', 'newsleft', 'features'],
       entries: [{
           id: "item-1",
           layout: "header",
-          title: "Sitefiction",
+          title: "Vue Pagebuilder",
           subtitle: "Lorem ipsum dolor site amet.",
           button_text: "Contact Us",
           button_link: "#",
@@ -58,6 +59,7 @@ const App = createApp({
     'wdgt-post': Post,
     'wdgt-header': Header,
     'wdgt-news': News,
+    'wdgt-newsleft': NewsLeft,
     'wdgt-featured': Featured,
     'wdgt-features': Features,
     'page-editor': Editor,
