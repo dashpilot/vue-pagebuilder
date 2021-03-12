@@ -65,7 +65,7 @@ section{
   color: var(--fg-color);
 }
 
-#content:nth-child(odd){
+#content section:nth-child(even){
   background-color: var(--bg-color);
 }
 

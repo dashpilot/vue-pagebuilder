@@ -12,7 +12,7 @@
 
   <script src="https://unpkg.com/vue@next"></script>
   <script src="main.mjs" type="module"></script>
-  <script type="module" src="https://unpkg.com/@deckdeckgo/inline-editor@latest/dist/deckdeckgo-inline-editor/deckdeckgo-inline-editor.esm.js"></script>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.css" />
   <script src="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.min.js"></script>
 
@@ -26,20 +26,36 @@
 
   <main>
 
-    <div id="header" v-for="item in entries">
-      <wdgt-header v-bind:item="item" v-if="item.layout == 'header'"></wdgt-header>
+    <div id="header">
+      <template v-for="item in entries">
+        <template v-if="item.layout == 'header'">
+          <wdgt-header v-bind:item="item"></wdgt-header>
+        </template>
+      </template>
     </div>
 
-    <div id="content" v-for="item in entries">
-      <wdgt-post v-bind:item="item" v-if="item.layout == 'post'"></wdgt-post>
-      <wdgt-news v-bind:item="item" v-if="item.layout == 'news'"></wdgt-news>
+    <div id="content">
+      <template v-for="item in entries">
+        <template v-if="item.layout == 'post'">
+          <wdgt-post v-bind:item="item"></wdgt-post>
+        </template>
 
-      <wdgt-featured v-bind:item="item" v-if="item.layout == 'featured'"></wdgt-featured>
-      <wdgt-features v-bind:item="item" v-if="item.layout == 'features'"></wdgt-features>
+        <template v-if="item.layout == 'news'">
+          <wdgt-news v-bind:item="item"></wdgt-news>
+        </template>
+
+        <template v-if="item.layout == 'featured'">
+          <wdgt-featured v-bind:item="item"></wdgt-featured>
+        </template>
+
+        <template v-if="item.layout == 'features'">
+          <wdgt-features v-bind:item="item"></wdgt-features>
+        </template>
+      </template>
     </div>
 
     <page-editor v-if="editing" v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
-    <deckgo-inline-editor background-color="false" align="false" containers="h1,h2,h3,h4,h5,h6,div,p"></deckgo-inline-editor>
+
 
   </main>
 
