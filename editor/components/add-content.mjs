@@ -68,7 +68,7 @@ const template = `
       <h4 class="float-left">Save</h4>
       <div class="close" @click="save = false">&times;</div>
       </div>
-      <div class="editor-content mt-4">
+      <div class="editor-content mt-1">
 
 <div class="label"><span>Download</span>  <span class="badge badge-pill badge-success float-right">free</span></div>
 
