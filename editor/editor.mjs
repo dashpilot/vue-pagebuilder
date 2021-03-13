@@ -14,11 +14,17 @@ const template = `
       <div class="editor-content">
 
       <div v-for="(val, key) in fields">
+
+
         <div class="label">{{key.replace('_', ' ')}}</div>
+
         <input type="text" class="form-control" v-if="val == 'txt'" v-model="item[key]">
         <textarea class="form-control" v-if="val == 'rte'" v-model="item[key]"></textarea>
         <fa-picker v-if="val == 'icon'" v-bind:mykey="key" v-bind:value="item[key]" @input="setIcon"></fa-picker>
+
         <image-resize v-if="val == 'img'" v-bind:mykey="key" @image="setImage"></image-resize>
+        <input v-if="val == 'vid'" type="text" class="form-control" v-model="item[key]">
+
       </div>
 
       <span v-if="item.layout != 'header'">
