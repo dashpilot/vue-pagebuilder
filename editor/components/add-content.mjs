@@ -125,6 +125,8 @@ export default {
       let root = document.documentElement;
       root.style.setProperty('--bg-color', hex);
       root.style.setProperty('--fg-color', hex2);
+      localStorage.setItem('bg-color', hex);
+      localStorage.setItem('fg-color', hex2);
     },
     setFont: function(font) {
       this.font = font;
@@ -135,12 +137,24 @@ export default {
       let root = document.documentElement;
       root.style.setProperty('--font', font);
       root.style.setProperty('--spacing', spacing);
+      localStorage.setItem('font', font);
+      localStorage.setItem('spacing', spacing);
     },
     swapStyleSheet(font) {
       let sheet = 'css/' + font;
       document.getElementById("fonts").setAttribute("href", sheet);
     },
     downloadFile() {
+      var css = `<style>`;
+      if (localStorage.getItem("bg-color") !== null) {
+        css += `:root {--bg-color:${localStorage.getItem("bg-color")};--fg-color:${localStorage.getItem("fg-color")};`
+      }
+      if (localStorage.getItem("font") !== null) {
+        css += `--font:${localStorage.getItem("font")};--spacing:${localStorage.getItem("spacing")};`
+      }
+      css += `}
+      </style>`;
+
       let header = `<!DOCTYPE html>
     		<html lang="en">
         <head>
@@ -150,6 +164,8 @@ export default {
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
           <link rel="stylesheet" href="https://vue-pagebuilder.vercel.app/style.css">
+
+          ${css}
 
           <link rel="preconnect" href="https://fonts.gstatic.com">
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap" rel="stylesheet">
