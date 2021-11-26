@@ -64,7 +64,7 @@ export default {
 
   methods: {
     save: function() {
-      alert(JSON.stringify(this.entries));
+      console.log(JSON.stringify(this.entries));
       this.item = false;
     },
     setIcon: function(e) {
