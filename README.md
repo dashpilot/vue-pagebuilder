@@ -14,3 +14,6 @@ Features:
 # preview
 
 ![App Preview](https://github.com/dashpilot/vue-pagebuilder/blob/main/editor/img/app-preview2.png?raw=true)
+
+## Press the :star: button
+Don't forget to press the :star: button to let me know I should continue improving this project.
