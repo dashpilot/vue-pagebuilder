@@ -6,7 +6,8 @@ Features:
 
 -   Add premade layout blocks to the page
 -   Rearrange and delete layout blocks
--   Edit text and images
+-   Edit text
+-   Upload images (with automatic resize)
 -   Font Awesome icon chooser
 -   Change colors and fonts
 -   Download generated HTML
