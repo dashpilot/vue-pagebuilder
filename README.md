@@ -12,10 +12,10 @@ Features:
 -   Change colors and fonts
 -   Download generated HTML
 
-# demo
+# Demo
 https://vue-pagebuilder.vercel.app
 
-# preview
+# Preview
 
 ![App Preview](https://github.com/dashpilot/vue-pagebuilder/blob/main/editor/img/app-preview2.png?raw=true)
 
