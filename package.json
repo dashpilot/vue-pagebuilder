@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/dashpilot/vue-pagebuilder#readme",
   "devDependencies": {
-    "rollup": "^2.41.1"
+    "rollup": "^3.7.5"
   }
 }
