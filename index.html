@@ -1,73 +1,85 @@
 <!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue 3 Pagebuilder</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>Vue 3 Pagebuilder</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="editor/editor.css" />
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="editor/editor.css">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.2/vue.global.prod.min.js"
+      integrity="sha512-YrmKYDNQKVmL5Y3xfdyNrp7atx+/XpIevYmFWoXMBitv2UitzwPwDzg/1H2UnBwelWgzDUd8Ex7L8bw61aK0jA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.7/vue.global.prod.js" integrity="sha512-SQkI+lSIpzqYFNvIbmY/EutPD7x5hU0bwppRywvIR9ymIHudH/P0ECQuc4fyugI0fRlb9b6zKcE3Lq0V//TVpw==" crossorigin="anonymous"></script>
-  <!-- <script src="https://unpkg.com/vue@next"></script> -->
-  <script src="main.mjs" type="module"></script>
+    <script src="main.mjs" type="module"></script>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.min.js"></script>
-  <script src="https://cdn.rawgit.com/beautify-web/js-beautify/v1.13.6/js/lib/beautify-html.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@furcan/iconpicker@1.5.0/dist/iconpicker-1.5.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/beautify-web/js-beautify/v1.13.6/js/lib/beautify-html.js"></script>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
-
-  <main>
-
-    <div id="page">
-
-      <div id="header">
-        <template v-for="item in entries">
-          <template v-if="item.layout == 'header'">
-            <wdgt-header v-bind:item="item"></wdgt-header>
+  <body>
+    <main>
+      <div id="page">
+        <div id="header">
+          <template v-for="item in entries">
+            <template v-if="item.layout == 'header'">
+              <wdgt-header v-bind:item="item"></wdgt-header>
+            </template>
           </template>
-        </template>
+        </div>
+
+        <div id="content">
+          <template v-for="item in entries">
+            <template v-if="item.layout == 'post'">
+              <wdgt-post v-bind:item="item"></wdgt-post>
+            </template>
+
+            <template v-if="item.layout == 'news'">
+              <wdgt-news v-bind:item="item"></wdgt-news>
+            </template>
+
+            <template v-if="item.layout == 'newsleft'">
+              <wdgt-newsleft v-bind:item="item"></wdgt-newsleft>
+            </template>
+
+            <template v-if="item.layout == 'featured'">
+              <wdgt-featured v-bind:item="item"></wdgt-featured>
+            </template>
+
+            <template v-if="item.layout == 'features'">
+              <wdgt-features v-bind:item="item"></wdgt-features>
+            </template>
+          </template>
+        </div>
       </div>
-
-      <div id="content">
-        <template v-for="item in entries">
-          <template v-if="item.layout == 'post'">
-            <wdgt-post v-bind:item="item"></wdgt-post>
-          </template>
-
-          <template v-if="item.layout == 'news'">
-            <wdgt-news v-bind:item="item"></wdgt-news>
-          </template>
-
-          <template v-if="item.layout == 'newsleft'">
-            <wdgt-newsleft v-bind:item="item"></wdgt-newsleft>
-          </template>
-
-          <template v-if="item.layout == 'featured'">
-            <wdgt-featured v-bind:item="item"></wdgt-featured>
-          </template>
-
-          <template v-if="item.layout == 'features'">
-            <wdgt-features v-bind:item="item"></wdgt-features>
-          </template>
-        </template>
-      </div>
-
-    </div>
-    <page-editor v-if="editing" v-bind:layouts="layouts" v-bind:entries="entries"></page-editor>
-
-  </main>
-
-
-
-</body>
-
+      <page-editor
+        v-if="editing"
+        v-bind:layouts="layouts"
+        v-bind:entries="entries"
+      ></page-editor>
+    </main>
+  </body>
 </html>
