@@ -25,7 +25,7 @@ https://vue-pagebuilder.vercel.app
 To run the project locally, run:
 
 ```bash
-npm run start
+npm run serve
 ```
 
 This will start a local server on localhost:8000
