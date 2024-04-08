@@ -23,11 +23,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://unpkg.com/simple-color-picker/dist/simple-color-picker.umd.js"></script>
-    <script
-      src="https://vue-pagebuilder.vercel.app/main.mjs"
-      type="module"
-    ></script>
+
     <link
       rel="stylesheet"
       href="https://vue-pagebuilder.vercel.app/editor/js/iconpicker/iconpicker-1.5.0.css"
@@ -42,22 +38,24 @@
   </head>
 
   <body>
-    <main>
-      <div id="content" v-for="item in entries">
-        <wdgt-post v-bind:item="item" v-if="item.layout == 'post'"></wdgt-post>
-        <wdgt-news v-bind:item="item" v-if="item.layout == 'news'"></wdgt-news>
-        <wdgt-banner
-          v-bind:item="item"
-          v-if="item.layout == 'banner'"
-        ></wdgt-banner>
-        <wdgt-featured
-          v-bind:item="item"
-          v-if="item.layout == 'featured'"
-        ></wdgt-featured>
-        <wdgt-features
-          v-bind:item="item"
-          v-if="item.layout == 'features'"
-        ></wdgt-features>
+    <main id="app">
+      <div id="content">
+        <section v-for="item in entries">
+          <div v-if="item.layout == 'featured'">
+            <div
+              :id="item.id"
+              class="editable"
+              data-fields="title=txt&amp;body=rte"
+            >
+              <div class="container">
+                <div class="w-50 m-auto text-center">
+                  <h2 v-text="item.title"></h2>
+                  <p v-html="item.body"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <page-editor
@@ -66,5 +64,44 @@
         v-bind:entries="entries"
       ></page-editor>
     </main>
+
+    <script type="module">
+      import Editor from "./editor/editor.mjs";
+      const app = Vue.createApp({
+        data() {
+          return {
+            editing: true,
+            layouts: ["featured"],
+            entries: [
+              {
+                layout: "featured",
+                id: "item-1",
+                title: "A first item",
+                body: "Lorem ipsum dolor site amet",
+              },
+              {
+                layout: "featured",
+                id: "item-2",
+                title: "A second item",
+                body: "Nam at tincidunt libero, ut iaculis augue.",
+              },
+            ],
+          };
+        },
+        methods: {
+          defaultVal(key, def) {
+            if (key == "") {
+              return def;
+            } else {
+              return key;
+            }
+          },
+        },
+        components: {
+          "page-editor": Editor,
+        },
+      });
+      app.mount("#app");
+    </script>
   </body>
 </html>
