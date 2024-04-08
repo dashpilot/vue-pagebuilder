@@ -24,7 +24,12 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    <!-- this serves the unbundled version -->
     <script src="main.mjs" type="module"></script>
+
+    <!-- alternatively you can use the bundled version
+     <script src="build/bundle.mjs" type="module"></script>
+    -->
 
     <link
       rel="stylesheet"
@@ -38,9 +43,27 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;600&family=Lobster&family=Playfair+Display&family=Raleway&family=Cutive+Mono&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+    />
+
+    <style>
+      .github-fork-ribbon:before {
+        background-color: #333;
+      }
+    </style>
   </head>
 
   <body>
+    <a
+      class="github-fork-ribbon"
+      href="https://github.com/dashpilot/vue-pagebuilder"
+      data-ribbon="Fork me on GitHub"
+      title="Fork me on GitHub"
+      >Fork me on GitHub</a
+    >
     <main>
       <div id="page">
         <div id="header">

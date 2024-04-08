@@ -4,8 +4,7 @@
   "description": "A visual pagebuilder for Vue 3",
   "main": "main.js",
   "scripts": {
-    "watch": "rollup ./main.mjs --file ./build/bundle.mjs --format es --watch",
-    "build": "rollup ./main.mjs --file ./build/bundle.mjs --format es",
+    "start": "rollup -c",
     "help": "rollup --help"
   },
   "repository": {
@@ -19,6 +18,7 @@
   },
   "homepage": "https://github.com/dashpilot/vue-pagebuilder#readme",
   "devDependencies": {
-    "rollup": "^3.7.5"
+    "rollup": "^3.7.5",
+    "rollup-plugin-serve": "^1.1.1"
   }
 }

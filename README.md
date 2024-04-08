@@ -12,21 +12,6 @@ Features:
 - Change colors and fonts
 - Download generated HTML
 
-# SETUP
-
-- To run the demo locally, you could use:
-
-```bash
-npx http-server /path/to/folder
-```
-
-or use the "serve" package:
-cd /path/to/folder
-
-```bash
-npx serve
-```
-
 # demo
 
 https://vue-pagebuilder.vercel.app
@@ -34,6 +19,16 @@ https://vue-pagebuilder.vercel.app
 # preview
 
 ![App Preview](https://github.com/dashpilot/vue-pagebuilder/blob/main/editor/img/app-preview2.png?raw=true)
+
+## Run the demo locally
+
+To run the project locally, run:
+
+```bash
+npm run start
+```
+
+This will start a local server on localhost:8000
 
 ## Press the :star: button
 

@@ -1,4 +1,4 @@
-.edit{
+.edit {
   display: block;
   width: 50px;
   height: 50px;
@@ -10,31 +10,31 @@
   cursor: pointer;
 }
 
-.editor{
+.editor {
   overflow-y: auto;
 }
 
-#adder, #designer, #saver{
+#adder,
+#designer,
+#saver {
   position: fixed;
   top: 0;
   width: 300px;
   height: 100%;
   background-color: white;
-  border-left: 1px solid #DDD;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  border-left: 1px solid #ddd;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
 }
 
-
-.editable > .container{
+.editable > .container {
   border: 1px solid transparent;
 }
 
-.editable  > .container:hover{
+.editable > .container:hover {
   border: 1px dashed #333;
   cursor: pointer;
 }
-
 
 .fade-enter-active,
 .fade-leave-active {
@@ -49,7 +49,7 @@
 .slidein-right {
   width: 400px;
   position: fixed;
-  z-index: 100;
+  z-index: 9999;
   top: 0;
   height: 100%;
   background-color: white;
@@ -67,8 +67,8 @@
   right: -400px;
 }
 
-.slidein-left{
-    left: 0;
+.slidein-left {
+  left: 0;
 }
 
 .slide-left-enter-active,
@@ -81,51 +81,50 @@
   left: -300px;
 }
 
-
-.editor textarea{
+.editor textarea {
   min-height: 200px;
   resize: none;
 }
 
-.editor-header{
+.editor-header {
   padding-bottom: 5px;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
   height: 50px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
   position: fixed;
   z-index: 99;
 }
 
-.slidein-left .editor-header{
+.slidein-left .editor-header {
   width: 300px;
 }
 
-.slidein-right .editor-header{
+.slidein-right .editor-header {
   width: 400px;
 }
 
-.editor-header h4{
+.editor-header h4 {
   font-size: 16px;
   padding-top: 5px;
 }
 
-.close:hover{
+.close:hover {
   cursor: pointer;
 }
 
-.editor-content{
+.editor-content {
   padding: 20px;
   padding-top: 50px;
 }
 
-.editor-content:first-child{
+.editor-content:first-child {
   margin-top: 0;
 }
 
-.label{
+.label {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   font-size: 14px;
@@ -134,23 +133,23 @@
   color: #212529;
 }
 
-.save{
+.save {
   margin-top: 30px;
 }
 
-.box{
+.box {
   display: block;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   margin-bottom: 10px;
 }
 
-.box:hover{
-  background-color: #F8F8F8;
+.box:hover {
+  background-color: #f8f8f8;
   cursor: pointer;
   text-decoration: none;
 }
 
-#dock{
+#dock {
   position: fixed;
   bottom: 15px;
   text-align: center;
@@ -158,27 +157,32 @@
   left: calc(50% - 150px);
 }
 
-#dock img{
+#dock img {
   width: 60px;
   margin: 5px;
 }
 
-.grow { transition: all .2s ease-in-out; }
-.grow:hover { transform: scale(1.1); cursor: pointer; }
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
-#editor .btn-outline-danger{
+#editor .btn-outline-danger {
   border: 1px solid #6c757d;
   color: #6c757d;
 }
 
-#editor .btn-primary{
+#editor .btn-primary {
   position: fixed;
   right: 15px;
   bottom: 15px;
   width: 370px;
 }
 
-.swatch{
+.swatch {
   display: inline-block;
   vertical-align: top;
   width: 32px;
@@ -188,28 +192,28 @@
   border-radius: 6px;
   cursor: pointer;
   text-align: center;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
 }
 
-.fa-center{
+.fa-center {
   margin-top: 8px;
 }
 
-.w-100px{
+.w-100px {
   width: 100px;
 }
 
-a.list-group-item{
+a.list-group-item {
   color: black;
 }
 
-a.list-group-item:hover{
-  background-color: #F8F8F8;
+a.list-group-item:hover {
+  background-color: #f8f8f8;
   text-decoration: none;
   cursor: pointer;
 }
 
-.info{
+.info {
   padding-top: 5px;
   color: #777;
 }
