@@ -12,6 +12,21 @@ Features:
 - Change colors and fonts
 - Download generated HTML
 
+# SETUP
+
+- To run the demo locally, you could use:
+
+```bash
+npx http-server /path/to/folder
+```
+
+or use the "serve" package:
+cd /path/to/folder
+
+```bash
+npx serve
+```
+
 # demo
 
 https://vue-pagebuilder.vercel.app
